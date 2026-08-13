@@ -15,20 +15,20 @@ Bank retry. Worker chết. Invoice timeout. Hệ thống vẫn ghi **một lần
 
 ## Strengths
 
-**Money path không double-book**  
-ABBank — 7 endpoint + webhook biến động số dư. Xác thực hai lớp (Basic + RSA) trên *raw bytes*, fail-closed. Dedup bằng transaction id bất biến + `UNIQUE`. Ledger và outbox ghi trong cùng transaction.
+**Money path**  
+Tích hợp cổng thanh toán và webhook. Chữ ký fail-closed. Retry từ bên kia không ghi sổ hai lần.
 
-**E-invoice không phát hành trùng**  
-Idempotency 3 lớp: unique index · workflow check · provider key. Batch lỗi một phần → retry đúng item chưa confirm, không phát hành lại cả lô.
+**E-invoice**  
+Phát hành hóa đơn điện tử idempotent. Timeout hay retry chỉ gửi phần chưa confirm.
 
-**At-least-once, exactly-once effect**  
-Transactional outbox. Relay worker claim batch bằng pessimistic lock, bỏ qua row đang bị giữ. Reaper thu hồi lock worker chết — không mất message, không chặn nhau.
+**Messaging**  
+Giao nhận at-least-once, effect exactly-once. Worker chết không mất message, không chặn nhau.
 
-**Concurrency đúng isolation**  
-Trừ hạn mức hóa đơn / xuất kho tuần tự bằng row lock. Read Committed không chặn lost update. Redis auth invalidate qua RabbitMQ, TTL làm chốt, Redis chết thì fail-closed.
+**Concurrency**  
+Tuần tự hóa chỗ không được lost update. Cache chết thì fail-closed, không đoán.
 
-**Ranh giới module là luật CI**  
-Legacy .NET 8 → 5 bounded context sau YARP. 3 cơ chế auth gom về Keycloak. `NetArchTest` fail build nếu service reference chéo hoặc credential lọt config.
+**Boundaries**  
+Ranh giới module và credential không nằm ở convention — CI chặn.
 
 ## FlashSale
 
