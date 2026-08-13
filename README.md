@@ -27,8 +27,6 @@ Bank retry. Worker chết. Invoice timeout. Hệ thống vẫn ghi **một lần
   tests ........ 174  ·  83 integration trên Postgres / Redis / RabbitMQ thật
 ```
 
-Redis Lua shard + cross-shard fallback. Payment SAGA hoàn tồn kho về **đúng shard đã trừ**. 3 API + 2 worker sau NGINX. Trace 24 span `API → RabbitMQ → Worker`.
-
 ## Stack
 
 `C#` `ASP.NET Core` `EF Core` `PostgreSQL` `Redis` `RabbitMQ` `MassTransit`  
