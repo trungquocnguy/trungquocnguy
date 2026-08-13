@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Nguyen Quoc Trung — .NET backend</title>
+  <desc id="desc">Payments, e-invoicing, reliable messaging. Ho Chi Minh City. Open to work.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="55%" stop-color="#0C1424"/>
+      <stop offset="100%" stop-color="#101A30"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F0B429"/>
+      <stop offset="45%" stop-color="#2EC4B6"/>
+      <stop offset="100%" stop-color="#8B7CFF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#121C32"/>
+      <stop offset="100%" stop-color="#0C1528"/>
+    </linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#1A2744" stroke-width="0.7"/>
+    </pattern>
+    <radialGradient id="glowA" cx="18%" cy="20%" r="45%">
+      <stop offset="0%" stop-color="#F0B429" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#F0B429" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="88%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#2EC4B6" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#2EC4B6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- canvas -->
+  <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="420" rx="28" fill="url(#grid)" opacity="0.55"/>
+  <rect width="1200" height="420" rx="28" fill="url(#glowA)"/>
+  <rect width="1200" height="420" rx="28" fill="url(#glowB)"/>
+  <rect x="1.2" y="1.2" width="1197.6" height="417.6" rx="26.8" fill="none" stroke="#243252" stroke-width="1.4"/>
+  <rect x="0" y="0" width="1200" height="6" rx="3" fill="url(#edge)"/>
+
+  <!-- window dots -->
+  <circle cx="36" cy="36" r="6" fill="#FF6B6B"/>
+  <circle cx="58" cy="36" r="6" fill="#F0B429"/>
+  <circle cx="80" cy="36" r="6" fill="#2EC4B6"/>
+  <text x="108" y="41" fill="#6D7B94" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">trung@hcm — backend</text>
+  <rect x="980" y="22" width="188" height="28" rx="14" fill="#F0B429" fill-opacity="0.12" stroke="#F0B429" stroke-opacity="0.45"/>
+  <circle cx="1000" cy="36" r="4" fill="#F0B429"/>
+  <text x="1012" y="41" fill="#F0B429" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="600">Open to work</text>
+
+  <!-- identity -->
+  <text x="48" y="118" fill="#8B97AB" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="3">NGUYEN QUOC TRUNG</text>
+  <text x="48" y="168" fill="#F4F7FB" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="40" font-weight="700">.NET backend</text>
+  <text x="48" y="206" fill="#C5D0E0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="18">Payments · e-invoicing · reliable messaging</text>
+  <text x="48" y="242" fill="#8B97AB" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="15">Correctness when traffic is concurrent and the other side can retry.</text>
+
+  <!-- pills -->
+  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="600">
+    <rect x="48" y="272" width="168" height="32" rx="16" fill="#121C32" stroke="#2A3B5E"/>
+    <text x="68" y="293" fill="#E8EDF5">Ho Chi Minh City</text>
+    <rect x="228" y="272" width="72" height="32" rx="16" fill="#121C32" stroke="#2A3B5E"/>
+    <text x="248" y="293" fill="#E8EDF5">C#</text>
+    <rect x="312" y="272" width="128" height="32" rx="16" fill="#121C32" stroke="#2A3B5E"/>
+    <text x="332" y="293" fill="#E8EDF5">ASP.NET Core</text>
+    <rect x="452" y="272" width="118" height="32" rx="16" fill="#121C32" stroke="#2A3B5E"/>
+    <text x="472" y="293" fill="#E8EDF5">PostgreSQL</text>
+  </g>
+
+  <text x="48" y="348" fill="#5C6B86" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">$ care --about idempotency,outbox,saga,locks</text>
+  <text x="48" y="372" fill="#2EC4B6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">ok · fail-closed · no silent fallback</text>
+
+  <!-- right: flow panel -->
+  <g transform="translate(760,86)">
+    <rect width="392" height="292" rx="20" fill="url(#panel)" stroke="#2A3B5E"/>
+    <text x="22" y="32" fill="#6D7B94" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="2">FLOW</text>
+    <text x="22" y="52" fill="#E8EDF5" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">at-least-once, exactly-once effect</text>
+
+    <!-- nodes -->
+    <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">
+      <rect x="22" y="74" width="150" height="40" rx="10" fill="#1A2744" stroke="#F0B429" stroke-opacity="0.7"/>
+      <circle cx="42" cy="94" r="5" fill="#F0B429"/>
+      <text x="56" y="99" fill="#F4F7FB">Webhook</text>
+
+      <rect x="220" y="74" width="150" height="40" rx="10" fill="#1A2744" stroke="#2EC4B6" stroke-opacity="0.7"/>
+      <circle cx="240" cy="94" r="5" fill="#2EC4B6"/>
+      <text x="254" y="99" fill="#F4F7FB">Verify + dedup</text>
+
+      <rect x="22" y="154" width="150" height="40" rx="10" fill="#1A2744" stroke="#8B7CFF" stroke-opacity="0.7"/>
+      <circle cx="42" cy="174" r="5" fill="#8B7CFF"/>
+      <text x="56" y="179" fill="#F4F7FB">Ledger + outbox</text>
+
+      <rect x="220" y="154" width="150" height="40" rx="10" fill="#1A2744" stroke="#FF6B6B" stroke-opacity="0.7"/>
+      <circle cx="240" cy="174" r="5" fill="#FF6B6B"/>
+      <text x="254" y="179" fill="#F4F7FB">Relay worker</text>
+    </g>
+
+    <!-- connectors -->
+    <path d="M172 94 H220" stroke="#3A4E76" stroke-width="2"/>
+    <path d="M97 114 V154" stroke="#3A4E76" stroke-width="2"/>
+    <path d="M172 174 H220" stroke="#3A4E76" stroke-width="2"/>
+
+    <text x="22" y="230" fill="#8B97AB" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11">UNIQUE(tx_id) · raw-byte signature</text>
+    <text x="22" y="250" fill="#8B97AB" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11">pessimistic claim · dead-worker reaper</text>
+    <text x="22" y="276" fill="#F0B429" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">Bank can retry. We must not double-book.</text>
+  </g>
+</svg>
