@@ -1,6 +1,6 @@
 <!-- github.com/trungquocnguy -->
 <div align="center">
-  <img src="./assets/banner.svg" alt="Nguyen Quoc Trung — .NET backend, Ho Chi Minh City, open to work" width="100%" />
+  <img src="./assets/banner.svg" alt="Nguyen Quoc Trung — .NET backend, Ho Chi Minh City" width="100%" />
 </div>
 
 <br/>
@@ -29,15 +29,8 @@ I write the path that must stay correct when the other side retries.
 - **Effect, not intent.** At-least-once delivery is fine if the write is idempotent and the ledger is the only book.
 - **Measure the constraint.** If `/health/live` falls over, you are saturating the box, not the algorithm.
 
-Featured repos stay private for now. If you are hiring, ask — I will walk the code.
-
 ---
 
 <p align="center">
   <a href="mailto:trungquocnguy@gmail.com"><img src="https://img.shields.io/badge/email-trungquocnguy%40gmail.com-0B1220?style=for-the-badge&labelColor=F0B429&color=0B1220" alt="email" /></a>
-  <a href="https://linkedin.com/in/nguyen-quoc-trung-994663323"><img src="https://img.shields.io/badge/linkedin-nguyen--quoc--trung-0B1220?style=for-the-badge&labelColor=2EC4B6&color=0B1220" alt="linkedin" /></a>
-</p>
-
-<p align="center">
-  <sub>Ho Chi Minh City · open to .NET backend roles</sub>
 </p>

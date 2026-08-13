@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
   <title id="title">Nguyen Quoc Trung — .NET backend</title>
-  <desc id="desc">Payments, e-invoicing, reliable messaging. Ho Chi Minh City. Open to work.</desc>
+  <desc id="desc">Payments, e-invoicing, reliable messaging. Ho Chi Minh City.</desc>
 
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -43,9 +43,6 @@
   <circle cx="58" cy="36" r="6" fill="#F0B429"/>
   <circle cx="80" cy="36" r="6" fill="#2EC4B6"/>
   <text x="108" y="41" fill="#6D7B94" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">trung@hcm — backend</text>
-  <rect x="980" y="22" width="188" height="28" rx="14" fill="#F0B429" fill-opacity="0.12" stroke="#F0B429" stroke-opacity="0.45"/>
-  <circle cx="1000" cy="36" r="4" fill="#F0B429"/>
-  <text x="1012" y="41" fill="#F0B429" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="600">Open to work</text>
 
   <!-- identity -->
   <text x="48" y="118" fill="#8B97AB" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="3">NGUYEN QUOC TRUNG</text>
