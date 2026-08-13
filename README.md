@@ -1,3 +1,4 @@
+<!-- github.com/trungquocnguy -->
 <div align="center">
   <img src="./assets/banner.svg" alt="Nguyen Quoc Trung — .NET backend, Ho Chi Minh City, open to work" width="100%" />
 </div>
