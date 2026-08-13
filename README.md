@@ -15,20 +15,7 @@ Bank retry. Worker chết. Invoice timeout. Hệ thống vẫn ghi **một lần
 
 ## Strengths
 
-**Money path**  
-Tích hợp cổng thanh toán và webhook. Chữ ký fail-closed. Retry từ bên kia không ghi sổ hai lần.
-
-**E-invoice**  
-Phát hành hóa đơn điện tử idempotent. Timeout hay retry chỉ gửi phần chưa confirm.
-
-**Messaging**  
-Giao nhận at-least-once, effect exactly-once. Worker chết không mất message, không chặn nhau.
-
-**Concurrency**  
-Tuần tự hóa chỗ không được lost update. Cache chết thì fail-closed, không đoán.
-
-**Boundaries**  
-Ranh giới module và credential không nằm ở convention — CI chặn.
+`Money path` `E-invoice` `Messaging` `Concurrency` `Boundaries`
 
 ## FlashSale
 
