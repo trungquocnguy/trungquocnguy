@@ -1,36 +1,52 @@
-<!-- github.com/trungquocnguy -->
-<div align="center">
-  <img src="./assets/banner.svg" alt="Nguyen Quoc Trung — .NET backend, Ho Chi Minh City" width="100%" />
-</div>
+```text
+trung@hcm  ·  .NET backend
+────────────────────────────────────────
+payments · e-invoice · reliable messaging
+```
 
-<br/>
+Bank retry. Worker chết. Invoice timeout. Hệ thống vẫn ghi **một lần**.
 
-Backend .NET ở **TP. Hồ Chí Minh**. Việc hàng ngày của tôi là không để tiền, hóa đơn, tồn kho bị ghi hai lần khi bank retry, worker chết, hoặc request timeout.
+```diff
++ assert unique(transaction_id)
++ assert signature.verify(raw_bytes) || reject
++ assert ledger_debit == ledger_credit
++ assert orders + redis_remaining == stock
+```
 
-I write the path that must stay correct when the other side retries.
+## Strengths
 
-<br/>
+**Money path không double-book**  
+ABBank — 7 endpoint + webhook biến động số dư. Xác thực hai lớp (Basic + RSA) trên *raw bytes*, fail-closed. Dedup bằng transaction id bất biến + `UNIQUE`. Ledger và outbox ghi trong cùng transaction.
 
-<div align="center">
-  <img src="./assets/work.svg" alt="Selected work: FlashSale and payments / e-invoice" width="100%" />
-</div>
+**E-invoice không phát hành trùng**  
+Idempotency 3 lớp: unique index · workflow check · provider key. Batch lỗi một phần → retry đúng item chưa confirm, không phát hành lại cả lô.
 
-<br/>
+**At-least-once, exactly-once effect**  
+Transactional outbox. Relay worker claim batch bằng pessimistic lock, bỏ qua row đang bị giữ. Reaper thu hồi lock worker chết — không mất message, không chặn nhau.
 
-<div align="center">
-  <img src="./assets/stack.svg" alt="Stack: C#, ASP.NET Core, PostgreSQL, Redis, RabbitMQ, outbox, SAGA, Testcontainers" width="100%" />
-</div>
+**Concurrency đúng isolation**  
+Trừ hạn mức hóa đơn / xuất kho tuần tự bằng row lock. Read Committed không chặn lost update. Redis auth invalidate qua RabbitMQ, TTL làm chốt, Redis chết thì fail-closed.
 
-<br/>
+**Ranh giới module là luật CI**  
+Legacy .NET 8 → 5 bounded context sau YARP. 3 cơ chế auth gom về Keycloak. `NetArchTest` fail build nếu service reference chéo hoặc credential lọt config.
 
-### How I usually work
+## FlashSale
 
-- **Fail closed.** A missing signature or a dead cache is an error, not a guess. Fallback that “helps” has already issued the wrong QR.
-- **Effect, not intent.** At-least-once delivery is fine if the write is idempotent and the ledger is the only book.
-- **Measure the constraint.** If `/health/live` falls over, you are saturating the box, not the algorithm.
+```text
+  stock ........ 5 000
+  orders ....... 5 000
+  oversell ..... 0
+  requests ..... 377K @ 1 000 VU
+  tests ........ 174  ·  83 integration trên Postgres / Redis / RabbitMQ thật
+```
 
----
+Redis Lua shard + cross-shard fallback. Payment SAGA hoàn tồn kho về **đúng shard đã trừ**. 3 API + 2 worker sau NGINX. Trace 24 span `API → RabbitMQ → Worker`.
+
+## Stack
+
+`C#` `ASP.NET Core` `EF Core` `PostgreSQL` `Redis` `RabbitMQ` `MassTransit`  
+`Outbox` `SAGA` `Keycloak` `YARP` `Polly` `Testcontainers` `OpenTelemetry`
 
 <p align="center">
-  <a href="mailto:trungquocnguy@gmail.com"><img src="https://img.shields.io/badge/email-trungquocnguy%40gmail.com-0B1220?style=for-the-badge&labelColor=F0B429&color=0B1220" alt="email" /></a>
+  <a href="mailto:trungquocnguy@gmail.com"><code>trungquocnguy@gmail.com</code></a>
 </p>
